@@ -1,0 +1,15 @@
+.header{
+    background-color: #151515 !important;
+}
+
+.nav_text{
+    font-family: 'Josefin Sans', sans-serif;
+    /* font-family: 'Abril Fatface', cursive; */
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.nav_text:hover{
+    color: #fdbc2c
+}
