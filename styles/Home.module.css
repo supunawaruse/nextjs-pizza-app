@@ -1,3 +1,23 @@
 .container {
   background: url('/pattern-body.jpg');
 }
+
+.hero {
+  background-image: url("../public/home_bg.jpg");
+  height: 500px;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.title{
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 64px;
+  color: white;
+}
+
+.subTitle{
+  font-family: 'Abril Fatface', cursive;
+  font-size: 24px;
+  color: white;
+}
