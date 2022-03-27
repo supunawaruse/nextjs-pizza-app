@@ -12,9 +12,7 @@ function MyApp({ Component, pageProps }) {
         <title>Pizza Restaurant</title>
         <meta name="description" content="Best Pizza shop in Sri Lanka" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fredericka+the+Great&family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+       
       </Head>
 
       <Header />
