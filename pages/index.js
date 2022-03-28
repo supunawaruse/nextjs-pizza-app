@@ -12,6 +12,7 @@ export default function Home() {
         <div className="col-lg-6 mx-auto">
           <p className={`${styles.subTitle} lead mb-4 mt-md-5`}>We create custom, personal pizzas with quality ingredients in only five minutes.</p>
         </div>
+        <button className={`${styles.order_button} btn `}>VIEW MENU</button>
       </div>
 
       <div className='container mt-5 px-3 px-md-5'>

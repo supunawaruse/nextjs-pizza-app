@@ -1,0 +1,42 @@
+.pizzaCard{
+    padding: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pizzaCard:hover{
+    border: 2px solid #fdbc2c ;
+    transition: border-color 1s ease; 
+}
+
+.pizzaName{
+    font-family: 'Abril Fatface', cursive;
+    color: #fdbc2c;
+    margin-bottom:10px;
+  }
+  
+  .pizzaDesc{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    color: white;
+  }
+  
+  .pizzaPrice{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 24px;
+    color: #D94F2B;
+  }
+
+  
+  .button{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #fdbc2c;
+  }
+  
+  .button:hover{
+    background-color: transparent;
+    color: white;
+    border: 1px solid #fdbc2c ;
+  }
