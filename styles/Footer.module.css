@@ -32,6 +32,10 @@
     color: white;
 }
 
+.list_link:hover{
+    color: #9c361c !important;
+}
+
 .footer_end{
     background-color:black;
     padding: 20px;

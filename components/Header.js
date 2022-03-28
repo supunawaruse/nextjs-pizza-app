@@ -22,7 +22,7 @@ const Header = () => {
             <a className={`${styles.nav_text} nav-link`} href="/">HOME</a>
           </li>
           <li className="nav-item">
-            <a className={`${styles.nav_text} nav-link`} href="/">MENU</a>
+            <a className={`${styles.nav_text} nav-link`} href="/menu">MENU</a>
           </li>
         </ul>
   

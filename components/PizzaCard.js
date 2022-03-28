@@ -9,7 +9,7 @@ const PizzaCard = ({name,description,price,image}) => {
             <p className={styles.pizzaDesc}>{description}</p>
             <div className={styles.bottomContent}>
                 <p className={styles.pizzaPrice}>${price}</p>
-                <butto className={`${styles.button} btn`}>Add</butto>
+                <button className={`${styles.button} btn`}>Add</button>
             </div>
            
     </div>

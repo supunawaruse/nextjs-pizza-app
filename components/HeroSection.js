@@ -1,10 +1,10 @@
 import styles from '../styles/components/HeroSection.module.css'
 
-const HeroSection = () => {
+const HeroSection = ({text}) => {
   return (
     <div className={styles.section}>
         <div className='container'>
-            <h1 className={styles.title}>Pizza Menu</h1>
+            <h1 className={styles.title}>{text}</h1>
         </div>
     </div>
   )
