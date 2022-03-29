@@ -54,7 +54,10 @@ const Header = () => {
         </ul>
         </div>
         <div className={`${styles.item} d-flex justify-content-sm-end`}>
-          <i className="bi bi-cart" style={{fontSize:20,color:'#fdbc2c'}}></i>
+          <div className={styles.cart}>
+            <i className="bi bi-cart" style={{fontSize:20,color:'white'}}></i>
+            <div className={styles.counter}>2</div>
+          </div>
         </div>
       </div>
   </nav>

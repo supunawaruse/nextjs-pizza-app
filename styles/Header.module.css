@@ -19,6 +19,7 @@
 }
 
 .item:nth-child(1){
+    font-family: 'Josefin Sans', sans-serif;
     flex:2;
     display: flex;
 }
@@ -57,5 +58,23 @@
     font-weight: bold;
 }
 
+.cart{
+    position: relative;
+}
+
+.counter{
+    font-family: 'Josefin Sans', sans-serif;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fdbc2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
 
 
