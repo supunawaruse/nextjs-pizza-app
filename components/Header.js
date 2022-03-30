@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <nav className={`${styles.header} navbar navbar-expand-sm px-4 px-md-5`}>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"><i class="bi bi-justify" style={{color:'white',fontSize:24}}></i></span>
+        <span className="navbar-toggler-icon"><i className="bi bi-justify" style={{color:'white',fontSize:24}}></i></span>
       </button>
       <div className="collapse navbar-collapse nav-mobile" id="navbarSupportedContent">
         <div className={styles.item}>

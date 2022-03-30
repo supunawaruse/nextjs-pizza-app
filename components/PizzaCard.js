@@ -1,14 +1,18 @@
 import styles from '../styles/components/PizzaCard.module.css'
 import Image from "next/image"
+import Link from "next/link"
 
-const PizzaCard = ({name,description,price,image}) => {
+const PizzaCard = ({pizza}) => {
   return (
     <div className={`${styles.pizzaCard} col-12 col-sm-6 col-md-3 mt-4 d-block d-md-flex`}>
-            <Image src={require(`../public/${image}.png`)}  alt=""/>
-            <h3 className={styles.pizzaName}>{name}</h3>
-            <p className={styles.pizzaDesc}>{description}</p>
+      <Link href={`/pizza/${pizza._id}`} passHref>
+        <Image src={require(`../public/${pizza.img}.png`)}  alt=""/>
+      </Link>
+           
+            <h3 className={styles.pizzaName}>{pizza.title}</h3>
+            <p className={styles.pizzaDesc}>{pizza.desc}</p>
             <div className={styles.bottomContent}>
-                <p className={styles.pizzaPrice}>${price}</p>
+                <p className={styles.pizzaPrice}>Large: ${pizza.prices[2]}</p>
                 <button className={`${styles.button} btn`}>Add</button>
             </div>
            
