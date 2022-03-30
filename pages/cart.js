@@ -10,7 +10,7 @@ const Menu = () => {
         <div className='container mt-5'>
             <div className='row mb-4'>
                 <div className='col-12 col-md-8'>
-                <div class="table-responsive mb-4">
+                <div className="table-responsive mb-4">
                 <table className="table text-center">
                     <thead>
                         <tr>

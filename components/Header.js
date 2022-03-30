@@ -12,7 +12,7 @@ const Header = () => {
       <div className="collapse navbar-collapse nav-mobile" id="navbarSupportedContent">
         <div className={styles.item}>
           <div className={styles.callButton}>
-            <i class="bi bi-telephone-fill"></i>
+            <i className="bi bi-telephone-fill"></i>
           </div>
           <div className={styles.texts}>
             <div className={styles.text}>ORDER NOW!</div>
