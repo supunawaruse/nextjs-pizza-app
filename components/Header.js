@@ -1,9 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
+import { useSelector } from "react-redux"
 import logo from "../public/logo.png"
 import styles from "../styles/Header.module.css"
 
 const Header = () => {
+  
+  const quantity = useSelector(state=>state.cart.quantity)
+
   return (
     <nav className={`${styles.header} navbar navbar-expand-sm px-4 px-md-5`}>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,20 +49,23 @@ const Header = () => {
               </a>
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
               <a className={`${styles.nav_text} nav-link mx-md-2`} href="/">ABOUT</a>
           </li>
           <li className="nav-item">
               <a className={`${styles.nav_text} nav-link mx-md-2`} href="/">CONTACT</a>
-          </li>
+          </li> */}
         </ul>
         </div>
+
+        <Link href="/cart" passHref>
         <div className={`${styles.item} d-flex justify-content-sm-end`}>
           <div className={styles.cart}>
             <i className="bi bi-cart" style={{fontSize:20,color:'white'}}></i>
-            <div className={styles.counter}>2</div>
+            <div className={styles.counter}>{quantity}</div>
           </div>
         </div>
+        </Link>
       </div>
   </nav>
   )

@@ -3,8 +3,46 @@ import styles from '../../styles/Pizza.module.css'
 import Image from "next/image"
 import PizzaCard from '../../components/PizzaCard.js'
 import axios from 'axios'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addProduct } from '../../redux/cartSlice.js'
+
 
 const PizzaPage = ({pizza}) => {
+
+    const [price,setPrice] = useState(pizza.prices[0])
+    const [size,setSize] = useState(0)
+    const [quantity,setQuantity] = useState(1)
+    const [options,setOptions] = useState([])
+    const dispatch = useDispatch()
+
+    const changePrice = (number) =>{
+        setPrice(price + number)
+    }
+
+    const onSizeChange = (value) =>{
+        const dif = pizza.prices[value] - pizza.prices[size]
+        setSize(value)
+        changePrice(dif)
+    }
+
+    const onHandleChange = (e,option) =>{
+        const checked = e.target.checked
+        if(checked){
+            changePrice(option.price)
+            setOptions([...options,option])
+        }else{
+            changePrice(-option.price)
+            setOptions(options.filter((extra)=> extra._id !== option._id))
+        }
+    }
+
+    const handleAddToCart = () =>{
+        dispatch(
+            addProduct({...pizza,options,price,quantity})
+        )
+    }
+
   return (
     <div className={styles.container}>
         <HeroSection text={'Pizza Menu'}/>
@@ -18,27 +56,27 @@ const PizzaPage = ({pizza}) => {
                 <div className='col-12 col-md-6'>
                     <h1 className={styles.pizzaName}>{pizza.title}</h1>
                     <p className={styles.pizzaDesc}>{pizza.desc}</p>
-                    <h6 className={styles.smallHeader}>Available Sizes</h6>
+                    <h6 className={styles.smallHeader}>Available Sizes {size}</h6>
                     <div className={styles.sizes}>
-                        <div className={styles.size}>
-                            <Image src={require('../../public/clipart17874.png')} className='img-fluid' />
+                        <div className={`${styles.size} btn`} onClick={()=>onSizeChange(0)}>
+                            <Image src={require('../../public/clipart17874.png')} alt="" className='img-fluid' />
                             <span className={styles.sizeText}>Small</span>
                         </div>
-                        <div className={styles.size}>
-                            <Image src={require('../../public/clipart17874.png')} className='img-fluid' />
+                        <div className={`${styles.size} btn`} onClick={()=>onSizeChange(1)}>
+                            <Image src={require('../../public/clipart17874.png')}  alt="" className='img-fluid' />
                             <span className={styles.sizeText}>Medium</span>
                         </div>
-                        <div className={styles.size}>
-                            <Image src={require('../../public/clipart17874.png')} className='img-fluid' />
+                        <div className={`${styles.size} btn`} onClick={()=>onSizeChange(2)}>
+                            <Image src={require('../../public/clipart17874.png')}  alt="" className='img-fluid' />
                             <span className={styles.sizeText}>Large</span>
                         </div>
                     </div>
                     <h6 className={styles.smallHeader}>Additional Ingredients</h6>
                     {
-                        pizza.extraOptions.map((option) => (
+                        pizza.extraOptions.map((option,index) => (
                         <div key={option._id} className="form-check">
-                            <input className={`${styles.checkForm} form-check-input`} type="checkbox" value="" id="flexCheckDefault"/>
-                            <label className={`${styles.checkLabel} form-check-label`} for="flexCheckDefault">
+                            <input className={`${styles.checkForm} form-check-input`} type="checkbox" name={option.name} value="" id={option.text} onChange={(e)=>onHandleChange(e,option)} />
+                            <label className={`${styles.checkLabel} form-check-label`}>
                                 {option.text}
                             </label>
                         </div>
@@ -46,18 +84,19 @@ const PizzaPage = ({pizza}) => {
                     }
                     
                     
-                    <h1 className={styles.pizzaPrice}>Price: $21</h1>
+                    <h1 className={styles.pizzaPrice}>Price: ${price}</h1>
                     <h6 className={styles.smallHeader}>Quantity</h6>
                     <div className='row'>
                         <div className='col-12'>
-                            <div className={styles.enumerator}>
+                            {/* <div className={styles.enumerator}>
                                 <a className={styles.enumerator_btn}>-</a>
                                 <p className={styles.enumerator_btn}>1</p>
                                 <a className={styles.enumerator_btn}>+</a>
-                            </div>
+                            </div> */}
+                            <input type="number" defaultValue={1} min={1} value={quantity} onChange={(e)=> setQuantity(e.target.value)} />
                         </div>
                         <div className='col-12 mt-2'>
-                            <button className={`${styles.button} btn px-5 py-2`}>Add to Cart</button>
+                            <button className={`${styles.button} btn px-5 py-2`} onClick={handleAddToCart}>Add to Cart</button>
                         </div>
                     </div>
                 </div>

@@ -2,8 +2,18 @@ import HeroSection from '../components/HeroSection'
 import styles from '../styles/Cart.module.css'
 import Image from "next/image"
 import PizzaCard from '../components/PizzaCard'
+import { useDispatch, useSelector } from 'react-redux'
+import {reset} from '../redux/cartSlice'
 
-const Menu = () => {
+const Cart = () => {
+
+    const dispatch = useDispatch()
+    const cart = useSelector(state=>state.cart)
+
+    const onCartClear = () =>{
+        dispatch(reset())
+    }
+
   return (
     <div className={styles.container}>
         <HeroSection text={'Shopping Cart'} />
@@ -22,42 +32,20 @@ const Menu = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                        <td>
-                            <Image src={require('../public/pizzaSmall1.png')} alt="" className='img-fluid' />
-                        </td>
-                        <td className={styles.tableProduct}>
-                            <p className={styles.tableItem}>Moorish Lamb</p>
-                            <p className={styles.tableSize}>Size:Small</p>
-                        </td>
-                        <td className={styles.tablePrice}>$19.00</td>
-                        <td className={styles.tableQty}>1</td>
-                        <td className={styles.tablePrice}>$19.00</td>
-                        </tr>
-                        <tr>
-                        <td>
-                            <Image src={require('../public/pizzaSmall2.png')} alt="" className='img-fluid' />
-                        </td>
-                        <td className={styles.tableProduct}>
-                            <p className={styles.tableItem}>Vegetarian Supreme</p>
-                            <p className={styles.tableSize}>Size:Large</p>
-                        </td>
-                        <td className={styles.tablePrice}>$18.00</td>
-                        <td className={styles.tableQty}>2</td>
-                        <td className={styles.tablePrice}>$29.00</td>
-                        </tr>
-                        <tr>
-                        <td>
-                            <Image src={require('../public/pizzaSmall3.png')} alt="" className='img-fluid' />
-                        </td>
-                        <td className={styles.tableProduct}>
-                            <p className={styles.tableItem}>Spiced Pumpkin</p>
-                            <p className={styles.tableSize}>Size:Medium</p>
-                        </td>
-                        <td className={styles.tablePrice}>$16.00</td>
-                        <td className={styles.tableQty}>1</td>
-                        <td className={styles.tablePrice}>$23.00</td>
-                        </tr>
+                       {cart.products.map((product)=>(
+                           <tr key={product._id}>
+                           <td>
+                               <Image src={require('../public/pizzaSmall1.png')} alt="" className='img-fluid' />
+                           </td>
+                           <td className={styles.tableProduct}>
+                               <p className={styles.tableItem}>{product.title}</p>
+                               <p className={styles.tableSize}>Size:Small</p>
+                           </td>
+                           <td className={styles.tablePrice}>${product.price}</td>
+                           <td className={styles.tableQty}>{product.quantity}</td>
+                           <td className={styles.tablePrice}>${product.price * product.quantity}</td>
+                           </tr>
+                       ))}
                     </tbody>
                 </table>
                 </div>
@@ -67,8 +55,8 @@ const Menu = () => {
                     <p className={styles.cartText}>CART SUBTOTAL</p>
                     <p className={styles.cartText}>SHIPPING AND HANDLING</p>
                     <hr style={{height:2,color:'white'}} />
-                    <h4 className={styles.tablePrice}>Order Total	$79.00</h4>
-                    <button className={`${styles.updateBtn} btn mb-2 mt-2 py-2`}>UPDATE CART</button>
+                    <h4 className={styles.tablePrice}>Order Total	${cart.total}</h4>
+                    <button className={`${styles.updateBtn} btn mb-2 mt-2 py-2`} onClick={onCartClear}>CLEAR CART</button>
                     <button className={`${styles.checkoutBtn} btn py-2`}>PROCEED TO CHECKOUT</button>
                 </div>
             </div>
@@ -76,7 +64,7 @@ const Menu = () => {
         </div>
 
         <div className={`${styles.middleSection} text-center mx-0`}>
-          <h2 className={styles.textStyle}>Life is not about finding yourself, it's about finding pizza.</h2>
+          <h2 className={styles.textStyle}>Life is not about finding yourself, it is about finding pizza.</h2>
         </div>
        
 
@@ -84,4 +72,4 @@ const Menu = () => {
   )
 }
 
-export default Menu
+export default Cart

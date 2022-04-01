@@ -13,7 +13,11 @@
     font-family: 'Abril Fatface', cursive;
     color: #fdbc2c;
     margin-bottom:10px;
-  }
+}
+
+.pizzaName:hover{
+  cursor: pointer;
+}
   
   .pizzaDesc{
     font-family: 'Josefin Sans', sans-serif;
