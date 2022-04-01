@@ -17,3 +17,33 @@
 .boder_Card{
     border: 2px solid #D24D2A;
 }
+
+.accordion_title{
+  font-family: 'Abril Fatface', cursive;
+  background-color: #000000e3;
+  color: #fdbc2c;
+  border: none;
+  font-size: 20px;
+}
+
+.accordion_title:focus{
+  color: #fdbc2c;
+  box-shadow: none;
+}
+
+.accordion_title:not(.collapsed){
+  color: #fdbc2c;
+  background-color:#000000e3;
+}
+
+.accordion_title::after{
+  background-image: url('../public/tick.png') !important;
+}
+
+.accordion_body{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  text-align: left;
+  color: white;
+  background-color: #000000e3;
+}
