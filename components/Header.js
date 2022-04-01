@@ -51,12 +51,12 @@ const Header = () => {
           </li>
           <Link href="/about" passHref>
             <li className="nav-item">
-                <a className={`${styles.nav_text} nav-link mx-md-2`} href="/">ABOUT</a>
+                <a className={`${styles.nav_text} nav-link mx-md-2`}>ABOUT</a>
             </li>
           </Link>
           <Link href="/contact" passHref>
             <li className="nav-item">
-                <a className={`${styles.nav_text} nav-link mx-md-2`} href="/">CONTACT</a>
+                <a className={`${styles.nav_text} nav-link mx-md-2`}>CONTACT</a>
             </li>
           </Link>
         </ul>

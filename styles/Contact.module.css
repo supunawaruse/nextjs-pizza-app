@@ -1,0 +1,72 @@
+.container {
+    background: url('../public/pattern-body.jpg');
+}
+  
+.headerText{
+    font-family: 'Abril Fatface', cursive;
+    color: #fdbc2c;
+    margin-bottom:20px;
+    margin-top: 20px;
+}
+  
+.simpleText{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.contactColumn{
+    border-radius: 8px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.form_name{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.form_input{
+    color: #fff;
+    background-image: none;
+    background-color: transparent;
+}
+
+
+.form_input:focus{
+    color: white;
+    border-color: #fdbc2c;
+    box-shadow: none;
+    background-image: none;
+    background-color: transparent;
+}
+
+.contact_button{
+    width: 25%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: black;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    background-color: #fdbc2c;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.middleSection{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: url('../public/pattern-1.png');
+    background-color: #fdbc2c;
+}
+  
+.textStyle{
+margin-top: 10px;
+margin-bottom: 10px;
+font-family: 'Abril Fatface', cursive;
+font-size: 32px;
+color: rgb(20, 20, 20);
+}
