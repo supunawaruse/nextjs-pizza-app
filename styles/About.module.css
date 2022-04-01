@@ -1,0 +1,19 @@
+.container {
+    background: url('../public/pattern-body.jpg');
+  }
+  
+.headerText{
+    font-family: 'Abril Fatface', cursive;
+    color: #fdbc2c;
+    margin-bottom:40px;
+  }
+  
+.simpleText{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+.boder_Card{
+    border: 2px solid #D24D2A;
+}

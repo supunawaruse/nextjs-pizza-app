@@ -104,7 +104,7 @@ const PizzaPage = ({pizza}) => {
         </div>
 
         <div className={`${styles.middleSection} text-center mx-0`}>
-          <h2 className={styles.textStyle}>Life is not about finding yourself, it's about finding pizza.</h2>
+          <h2 className={styles.textStyle}>Life is not about finding yourself, it is about finding pizza.</h2>
         </div>
     
     </div>

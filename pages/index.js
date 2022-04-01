@@ -2,6 +2,7 @@ import styles from '../styles/Home.module.css'
 import Image from "next/image"
 import Background from '../public/home_bg.jpg'
 import Pizza from '../public/2.png'
+import Link from "next/link"
 
 export default function Home() {
   return (
@@ -11,15 +12,17 @@ export default function Home() {
         <div className="col-lg-6 mx-auto">
           <p className={`${styles.subTitle} lead mb-4 mt-md-2`}>We create custom, personal pizzas with quality ingredients in only five minutes.</p>
         </div>
+        <Link href="/menu" passHref>
         <button className={`${styles.order_button} btn`}>VIEW MENU</button>
+        </Link>
       </div>
 
       <div className='container mt-5 px-3 px-md-5'>
         <div className='text-center'>
           <h1 className={styles.headerText}>We are pizza makers, and our mission is to make cool pizza which feeds all your senses.</h1>
           <p className={styles.simpleText}>We prefer to rely on instinct and feel, measuring by hand, not by the gram. This is the authentic way to make pizza. Sure it’s a little unrefined, but we’re proud.</p>
-          <p className={styles.simpleText}>It’s pizza like this which feeds your sense of sharing, adding flavour to those occasions when you get together with friends and family.
-          And really, isn’t that what it’s all about? Because when pizza feeds all your senses, it’s not just great, it’s sensational.</p>
+          <p className={styles.simpleText}>It is pizza like this which feeds your sense of sharing, adding flavour to those occasions when you get together with friends and family.
+          And really, is not that what it is all about? Because when pizza feeds all your senses, it is not just great, it is sensational.</p>
         </div>
        
         <div className='row mt-5 mb-5 text-center text-md-start'>
