@@ -80,6 +80,9 @@ const about = () => {
       </div>
 
   </div>
+  <div className={`${styles.middleSection} text-center mx-0 mt-5 px-3`}>
+          <h2 className={styles.textStyle}>Life is not about finding yourself, it is about finding pizza.</h2>
+    </div>
   </div>
   )
 }

@@ -1,37 +1,70 @@
+import { useEffect, useState } from 'react'
 import HeroSection from '../components/HeroSection'
+import { ToastContainer, toast } from 'react-toastify';
 import styles from '../styles/Contact.module.css'
+import axios from 'axios'
 
 
 const contact = () => {
+
+    const [customerMessage,setCustomerMessage] = useState({customerName:"",email:"",subject:"",message:""})
+    const [btnDisable,setBtnDisable] = useState(true)
+
+    useEffect(()=>{
+        if(customerMessage.customerName !== "" && customerMessage.email !== "" && customerMessage.subject !== "" && customerMessage.message !== ""){
+            setBtnDisable(false)
+        }else{
+            setBtnDisable(true)
+        }
+    },[customerMessage])
+    
+    const onTextChange = (e) => {
+        setCustomerMessage({
+            ...customerMessage,
+            [ e.target.name]:e.target.value
+        })
+    }
+
+    const onSubmit = async (e) => {
+       e.preventDefault();
+        try {
+            await axios.post("http://localhost:3000/api/customer_message",customerMessage)
+            setCustomerMessage({customerName:"",email:"",subject:"",message:""})
+            toast.success("your message has been successfully sent")
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
   return (
     <div className={styles.container}>
+    <ToastContainer theme='dark' autoClose={3000} />
     <HeroSection text={'Contact Us'} />
-    
     <div className='container mt-5'>
         <div className='row'>
             <div className='col-12 col-md-8'>
             <h2 className={styles.headerText}>We are pizza makers, and our mission is to make cool pizza which feeds all your senses.</h2>
             <p className={styles.simpleText}>If you have questions or comments, please get a hold of us in whichever way is most convenient. Typi non habent claritatem insitam est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod legunt saepius.</p>
             
-            <form className='mt-3'>
+            <form className='mt-3 needs-validation' onSubmit={(e)=>onSubmit(e)} >
                 <div className="mb-3">
                     <label className={`${styles.form_name} form-label`}>Your Name</label>
-                    <input type="text" className={`${styles.form_input} form-control`}/>
+                    <input name='customerName' type="text" className={`${styles.form_input} form-control`} value={customerMessage.customerName} onChange={(e)=>onTextChange(e)} required/>
                 </div>
                 <div className="mb-3">
                     <label className={`${styles.form_name} form-label`}>Email address</label>
-                    <input type="email" className={`${styles.form_input} form-control`}/>
+                    <input name='email' type="email" className={`${styles.form_input} form-control`} value={customerMessage.email} onChange={(e)=>onTextChange(e)} required/>
                 </div>
                 <div className="mb-3">
                     <label className={`${styles.form_name} form-label`}>Subject</label>
-                    <input type="text" className={`${styles.form_input} form-control`}/>
+                    <input name='subject' type="text" className={`${styles.form_input} form-control`} value={customerMessage.subject} onChange={(e)=>onTextChange(e)} required/>
                 </div>
                 <div className="mb-3">
                     <label className={`${styles.form_name} form-label`}>Your Message</label>
-                    <textarea type="email" className={`${styles.form_input} form-control`}/>
+                    <textarea name='message' type="text" className={`${styles.form_input} form-control`} value={customerMessage.message} onChange={(e)=>onTextChange(e)} required/>
                 </div>
-                
-                <button type="submit" className={`${styles.contact_button} btn`}>Send Message</button>
+                <button type="submit"  className={`${styles.contact_button} btn`} >Send Message</button>
             </form>
 
             </div>
