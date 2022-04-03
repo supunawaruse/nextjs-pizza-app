@@ -6,6 +6,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addProduct } from '../../redux/cartSlice.js'
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const PizzaPage = ({pizza}) => {
@@ -39,12 +40,14 @@ const PizzaPage = ({pizza}) => {
 
     const handleAddToCart = () =>{
         dispatch(
-            addProduct({...pizza,options,price,quantity})
+            addProduct({...pizza,options,price,quantity,size})
         )
+        toast.success("Cart Updated")
     }
 
   return (
     <div className={styles.container}>
+        <ToastContainer theme='dark' autoClose={2000} />
         <HeroSection text={'Pizza Menu'}/>
         <div className='container'>
             <br /><br />
@@ -58,15 +61,15 @@ const PizzaPage = ({pizza}) => {
                     <p className={styles.pizzaDesc}>{pizza.desc}</p>
                     <h6 className={styles.smallHeader}>Available Sizes {size}</h6>
                     <div className={styles.sizes}>
-                        <div className={`${styles.size} btn`} onClick={()=>onSizeChange(0)}>
+                        <div className={`${styles.size} btn ` + `${size === 0 && styles.selectedSize}`} onClick={()=>onSizeChange(0)}>
                             <Image src={require('../../public/clipart17874.png')} alt="" className='img-fluid' />
                             <span className={styles.sizeText}>Small</span>
                         </div>
-                        <div className={`${styles.size} btn`} onClick={()=>onSizeChange(1)}>
+                        <div className={`${styles.size} btn ` + `${size === 1 && styles.selectedSize}`} onClick={()=>onSizeChange(1)}>
                             <Image src={require('../../public/clipart17874.png')}  alt="" className='img-fluid' />
                             <span className={styles.sizeText}>Medium</span>
                         </div>
-                        <div className={`${styles.size} btn`} onClick={()=>onSizeChange(2)}>
+                        <div className={`${styles.size} btn ` + `${size === 2 && styles.selectedSize}`} onClick={()=>onSizeChange(2)}>
                             <Image src={require('../../public/clipart17874.png')}  alt="" className='img-fluid' />
                             <span className={styles.sizeText}>Large</span>
                         </div>
