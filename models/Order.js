@@ -14,6 +14,17 @@ const OrderSchema = mongoose.Schema({
         maxLength:200,
     },
 
+    pizza:{
+        type:[
+            {
+                pizzaName:{type:String, required:true},
+                price:{type:Number, required:true},
+                size:{type:String, required:true},
+                quantity:{type:Number,required:true}
+            }
+        ]
+    },
+
     total:{
         type:Number,
         required:true,
