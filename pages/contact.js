@@ -5,7 +5,7 @@ import styles from '../styles/Contact.module.css'
 import axios from 'axios'
 
 
-const contact = () => {
+const Contact = () => {
 
     const [customerMessage,setCustomerMessage] = useState({customerName:"",email:"",subject:"",message:""})
     const [btnDisable,setBtnDisable] = useState(true)
@@ -95,4 +95,4 @@ const contact = () => {
   )
 }
 
-export default contact
+export default Contact

@@ -2,10 +2,28 @@ import mongoose from 'mongoose'
 
 const OrderSchema = mongoose.Schema({
 
-    customer:{
+    firstName:{
          type: String,
          required:true,
          maxLength:60,
+    },
+
+    lastName:{
+        type: String,
+         required:true,
+         maxLength:60,
+    },
+
+    email:{
+        type: String,
+        required:true,
+        maxLength:100,
+    },
+
+    contactNo:{
+        type: String,
+        required:true,
+        maxLength:60,
     },
 
     address:{
@@ -14,15 +32,9 @@ const OrderSchema = mongoose.Schema({
         maxLength:200,
     },
 
-    pizza:{
-        type:[
-            {
-                pizzaName:{type:String, required:true},
-                price:{type:Number, required:true},
-                size:{type:String, required:true},
-                quantity:{type:Number,required:true}
-            }
-        ]
+    pizzas:{
+        type:Array,
+        required:true,
     },
 
     total:{

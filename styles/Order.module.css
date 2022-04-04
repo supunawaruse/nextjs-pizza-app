@@ -1,0 +1,85 @@
+.container {
+    background: url('../public/pattern-body.jpg');
+}
+  
+.headerText{
+    font-family: 'Abril Fatface', cursive;
+    color: #fdbc2c;
+    margin-bottom:40px;
+}
+  
+.simpleText{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+.tableHeader{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    vertical-align: middle;
+  }
+  
+  .tablePrice{
+    color: #D94F2B;
+    font: 18px 'Fredericka the Great';
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .tableAddress{
+    vertical-align: middle;
+    color: white;
+    font: 16px 'Fredericka the Great';
+  }
+  
+  .done{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .inProgress{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: inProgress 1s ease infinite alternate;
+}
+
+@keyframes inProgress {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.undone .checkedIcon, .inProgress .checkedIcon{
+    display: none;
+}
+
+.undone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.3;
+}
+
+.middleSection{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: url('../public/pattern-1.png');
+    background-color: #fdbc2c;
+  }
+  
+  .textStyle{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 32px;
+    color: rgb(20, 20, 20);
+  }

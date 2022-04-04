@@ -96,7 +96,7 @@ const PizzaPage = ({pizza}) => {
                                 <p className={styles.enumerator_btn}>1</p>
                                 <a className={styles.enumerator_btn}>+</a>
                             </div> */}
-                            <input type="number" defaultValue={1} min={1} value={quantity} onChange={(e)=> setQuantity(e.target.value)} />
+                            <input type="number" min={1} value={quantity} onChange={(e)=> setQuantity(e.target.value)} />
                         </div>
                         <div className='col-12 mt-2'>
                             <button className={`${styles.button} btn px-5 py-2`} onClick={handleAddToCart}>Add to Cart</button>
