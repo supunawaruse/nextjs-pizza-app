@@ -82,7 +82,7 @@ const Index = ({orders,pizzas}) => {
                                         </Link>
                                         {
                                             order.status !== 3 && (
-                                                <button className='btn btn-secondary' onClick={()=>handleStatus(order._id)}>Update Status</button> 
+                                                <button className='btn btn-warning' onClick={()=>handleStatus(order._id)}>Update Status</button> 
                                             )
                                         }
                                        
