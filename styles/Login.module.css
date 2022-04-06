@@ -1,0 +1,20 @@
+.container{
+    background: url('../public/pattern-body.jpg');
+}
+
+.loginBox{
+    font-family: 'Josefin Sans', sans-serif;
+    width: 50%;
+    color: white;
+    margin: auto;
+    background-color: #4a4a4a4f;
+    border-radius: 10px;
+    padding:20px;
+}
+
+.loginBtn{
+    width: 30%;
+    margin: auto;
+    color: white;
+    font-weight: bold;
+}
