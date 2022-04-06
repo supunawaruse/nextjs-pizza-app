@@ -37,7 +37,15 @@ const OrderPage = ({order}) => {
                            </tr>
                     </tbody>
                 </table>
-                
+                <div className='mt-4'>
+                <h1 className={styles.tableAddress}>Ordered Items :</h1>
+                <br />
+                {
+                    order.pizzas.map((pizza)=> (
+                        <p key={pizza._id} className={styles.tableHeader}>{pizza.title} (Size: {pizza.size === 0 ? 'Small' : pizza.size === 1 ? 'Medium' : 'Large'} - Quantity: {pizza.quantity})</p>
+                    ))
+                }
+                </div>
                 <div className='mt-4'>
                 <h1 className={styles.tableAddress}>Order Status :</h1>
                 <div className='row text-center'>

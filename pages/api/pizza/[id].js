@@ -15,4 +15,13 @@ export default async function handler(req,res){
         }
     }
 
+    if(method === "DELETE"){
+        try { 
+            await Pizza.findByIdAndDelete(id)
+            res.status(200).json("Pizza has been deleted! ")
+        } catch (error) {
+            res.status(500).json(error) 
+        }
+    }
+
 }

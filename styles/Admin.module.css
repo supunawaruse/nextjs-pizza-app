@@ -1,0 +1,67 @@
+.container {
+    background: url('../public/pattern-body.jpg');
+}
+  
+.headerText{
+    font-family: 'Abril Fatface', cursive;
+    color: #fdbc2c;
+    margin-bottom:20px;
+    margin-top: 20px;
+}
+  
+.simpleText{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+
+
+.tableHeader{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    vertical-align: middle;
+  }
+  
+  .tablePrice{
+    color: white;
+    font: 14px 'Fredericka the Great';
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .tableRed{
+    color: #D94F2B;
+    font: 20px 'Fredericka the Great';
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+
+
+  .tableQty{
+    vertical-align: middle;
+    color: white;
+    font: 20px 'Fredericka the Great';
+  }
+
+  .addButton{
+    color: black;
+    background-color: #fdbc2c;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .tabText{
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+  }
+
+  .tabText:hover{
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+  }
+
+ 
