@@ -150,7 +150,7 @@ const Checkout = () => {
                          <p className={styles.checkoutText}>Pay with paypal</p>
                         <PayPalScriptProvider
                         options={{
-                            "client-id": "AaJ9oWGNH-i5fozVQhza4GNHk571CW4NLJ24tiAdXx-Y_l_VE1giqcBo6JzVr4aHmikPlGO6caX2DQnp",
+                            "client-id": process.env.PAYPAL_CLIENT_ID,
                             components: "buttons",
                             currency: "USD",
                             "disable-funding":"credit,card,p24"
