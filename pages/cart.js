@@ -43,7 +43,7 @@ const Cart = () => {
                        {cart.products.map((product,index)=>(
                            <tr key={product._id}>
                            <td>
-                               <Image src={require('../public/pizzaSmall1.png')} alt="" className='img-fluid' />
+                               <Image src={product.img} height={'150%'} width={'150%'} alt="" className='img-fluid' />
                            </td>
                            <td className={styles.tableProduct}>
                                <p className={styles.tableItem}>{product.title}</p>

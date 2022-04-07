@@ -5,7 +5,7 @@ import Link from "next/link"
 const PizzaCard = ({pizza}) => {
   return (
     <div className={`${styles.pizzaCard} col-12 col-sm-6 col-md-3 mt-4 d-block d-md-flex`}>
-        <Image src={require(`../public/${pizza.img}.png`)}  alt=""/>
+        <Image src={pizza.img} height={250} width={'150%'}  alt=""/>
         <h3 className={styles.pizzaName}>{pizza.title}</h3>
         <p className={styles.pizzaDesc}>{pizza.desc}</p>
         <div className={styles.bottomContent}>

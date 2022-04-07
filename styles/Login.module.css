@@ -2,9 +2,14 @@
     background: url('../public/pattern-body.jpg');
 }
 
+@media only screen and (min-width: 768px) {
+   .loginBox{
+    width: 50%;
+   }
+}
+
 .loginBox{
     font-family: 'Josefin Sans', sans-serif;
-    width: 50%;
     color: white;
     margin: auto;
     background-color: #4a4a4a4f;

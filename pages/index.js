@@ -50,7 +50,9 @@ export default function Home() {
           <h1 className={styles.headerText} style={{color:'white',marginBottom:10}}>Peri-Peri</h1>
           <h2 className={styles.title} style={{color:'black',fontSize:32}}>$18 - $40</h2>
           <p className={styles.simpleText}>Marinated Chicken Breast Fillets, Shallots, Roasted Capsicum, Caramelised Onions & Bocconcini on a Tomato base, topped with Peri-Peri sauce</p>
-          <button className={`${styles.order_button} btn `}>ORDER NOW</button>
+          <Link href={'/menu'} passHref>
+          <button className={`${styles.order_button} btn `}>See Menu</button>
+          </Link>
         </div>
         <div className='col-12 col-md-6'>
           <Image src={Pizza} alt="" className='img-fluid'/>

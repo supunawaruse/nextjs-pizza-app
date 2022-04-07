@@ -144,10 +144,10 @@ const Checkout = () => {
             <div className={`${styles.contactColumn} col-12 col-md-4 px-4 py-4 px-md-3 py-md-3`}>
                 {
                     !checkoutBtn ? (
-                        <p style={{color:'white'}}>You need to fill all the filed to complete checkout process</p>
+                        <p className={styles.checkoutText}>You need to fill all the filed to complete checkout process</p>
                     ):(
                         <>
-                        <button className={`${styles.checkoutBtn} btn py-2 mb-2`} >Cash On Delivery</button>
+                         <p className={styles.checkoutText}>Pay with paypal</p>
                         <PayPalScriptProvider
                         options={{
                             "client-id": "AaJ9oWGNH-i5fozVQhza4GNHk571CW4NLJ24tiAdXx-Y_l_VE1giqcBo6JzVr4aHmikPlGO6caX2DQnp",

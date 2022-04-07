@@ -15,8 +15,6 @@
     color: white;
 }
 
-
-
 .tableHeader{
     font-family: 'Josefin Sans', sans-serif;
     font-size: 14px;
@@ -40,8 +38,6 @@
     text-align: center;
   }
   
-
-
   .tableQty{
     vertical-align: middle;
     color: white;
@@ -64,4 +60,9 @@
     color: white;
   }
 
- 
+ .modalContent{
+  background: url('../public/pattern-body.jpg');
+  color: whitesmoke;
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 20px;
+ }

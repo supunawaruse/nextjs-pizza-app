@@ -54,7 +54,7 @@ const PizzaPage = ({pizza}) => {
             <hr style={{height:5,color:'#D94F2B'}} />
             <div className='row mt-5 mb-5'>
                 <div className='col-12 col-md-6'>
-                    <Image src={require(`../../public/${pizza.img}.png`)} alt="" className='img-fluid' />
+                    <Image src={pizza.img} height={'400%'} width={'400%'} alt="" className='img-fluid' />
                 </div>
                 <div className='col-12 col-md-6'>
                     <h1 className={styles.pizzaName}>{pizza.title}</h1>
@@ -91,11 +91,6 @@ const PizzaPage = ({pizza}) => {
                     <h6 className={styles.smallHeader}>Quantity</h6>
                     <div className='row'>
                         <div className='col-12'>
-                            {/* <div className={styles.enumerator}>
-                                <a className={styles.enumerator_btn}>-</a>
-                                <p className={styles.enumerator_btn}>1</p>
-                                <a className={styles.enumerator_btn}>+</a>
-                            </div> */}
                             <input type="number" min={1} value={quantity} onChange={(e)=> setQuantity(e.target.value)} />
                         </div>
                         <div className='col-12 mt-2'>

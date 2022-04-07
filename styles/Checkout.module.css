@@ -80,3 +80,8 @@ font-size: 16px;
 font-weight: bold;
 background-color: #fdbc2c
 }
+
+.checkoutText{
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+}
