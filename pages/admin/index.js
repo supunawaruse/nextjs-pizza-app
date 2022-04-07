@@ -163,8 +163,8 @@ const Index = ({orders,pizzas}) => {
                     </div>
                     <button className='btn btn-primary mt-2 mb-2' onClick={onAddExtras}>Add</button>
                     {
-                        newPizza.extraOptions.map((extra)=> (
-                            <p className='m-0'>Extras - {extra.text} - Price - {extra.price}</p>
+                        newPizza.extraOptions.map((extra,index)=> (
+                            <p key={index} className='m-0'>Extras - {extra.text} - Price - {extra.price}</p>
                         ))
                     }
                 </div>
